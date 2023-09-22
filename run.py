@@ -1,16 +1,19 @@
 import random
+import colorama
 
-# List of words for the game
+"""
+List of words for the game
+"""
 word_list = ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "kiwi", "lemon"]
 
-# Select a random word from the list
+"""Select a random word from the list"""
 selected_word = random.choice(word_list)
 
-# Initialize variables
+"""Initialize variables"""
 guesses = ""
 max_attempts = 6
 
-# Function to display the current state of the word with underscores for hidden letters
+"""Function to display the current state of the word with underscores for hidden letters"""
 def display_word(word, guesses):
     display = ""
     for letter in word:
@@ -20,7 +23,7 @@ def display_word(word, guesses):
             display += "_"
     return display
 
-# Main game loop
+"""Main game loop"""
 print("Welcome to Hangman!")
 while max_attempts > 0:
     print(display_word(selected_word, guesses))
@@ -32,7 +35,7 @@ while max_attempts > 0:
 
     if guess in selected_word:
         guesses += guess
-        if display_word(selected_word, guesses) == selected_word:
+        elif display_word(selected_word, guesses) == selected_word:
             print(f"Congratulations! You guessed the word: {selected_word}")
             break
     else:
