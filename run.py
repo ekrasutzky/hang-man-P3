@@ -4,10 +4,10 @@ from colorama import Fore, Back, Style
 colorama.init(autoreset= True)
 
 """List of words for the game"""
-word_list = ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "kiwi", "lemon"]
+WORD_LIST = ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "kiwi", "lemon"]
 
 """ ASCII art for hangman """
-hangman_stages = [
+HANGMAN_STAGES = [
     """
      ------
     |    |
@@ -87,7 +87,7 @@ def play_hangman():
     max_attempts = 6
     hangman_stage = 0
 
-    print("Welcome to Hangman!")
+    print(Fore.MAGENTA+ "Welcome to Hangman!")
 
     while max_attempts > 0:
         print(hangman_stages[hangman_stage])
@@ -95,18 +95,18 @@ def play_hangman():
         guess = input("Guess a letter: ").lower()
 
         if len(guess) != 1 or not guess.isalpha():
-            print(f"Please enter a single letter.")
+            print(Fore.YELLOW+ f"Please enter a single letter.")
             continue
 
         if guess in selected_word:
             guesses += guess
             if display_word(selected_word, guesses) == selected_word:
-                print(f"Congratulations! You guessed the word: {selected_word}")
+                print(Back.GREEN+ f"Congratulations! You guessed the word: {selected_word}")
                 break
         else:
             max_attempts -= 1
             hangman_stage += 1
-            print(f"Wrong guess! You have {max_attempts} attempts left.")
+            print(Fore.RED+ f"Wrong guess! You have {max_attempts} attempts left.")
 
     if max_attempts == 0:
         print(f"Sorry, you're out of attempts. The word was {selected_word}.")
@@ -114,8 +114,8 @@ def play_hangman():
 """ Main loop for restarting the game """
 while True:
     play_hangman()
-    play_again = input("Do you want to play again? (yes/no): ").lower()
+    play_again = input(Back.WHITE+ "Do you want to play again? (yes/no): ").lower()
     if play_again != "yes":
         break
 
-print("Thanks for playing Hangman!")
+print(Back.YELLOW+ "Thanks for playing Hangman!")
