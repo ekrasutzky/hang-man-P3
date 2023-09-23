@@ -1,4 +1,7 @@
 import random
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset= True)
 
 """List of words for the game"""
 word_list = ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "kiwi", "lemon"]
@@ -92,7 +95,7 @@ def play_hangman():
         guess = input("Guess a letter: ").lower()
 
         if len(guess) != 1 or not guess.isalpha():
-            print("Please enter a single letter.")
+            print(f"Please enter a single letter.")
             continue
 
         if guess in selected_word:
