@@ -4,10 +4,10 @@ from colorama import Fore, Back, Style
 colorama.init(autoreset= True)
 
 """List of words for the game"""
-WORD_LIST = ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "kiwi", "lemon"]
+word_list = ["apple", "banana", "cherry", "date", "elderberry", "fig", "grape", "honeydew", "kiwi", "lemon"]
 
 """ ASCII art for hangman """
-HANGMAN_STAGES = [
+hangman_stages = [
     """
      ------
     |    |
@@ -101,21 +101,21 @@ def play_hangman():
         if guess in selected_word:
             guesses += guess
             if display_word(selected_word, guesses) == selected_word:
-                print(Back.GREEN+ f"Congratulations! You guessed the word: {selected_word}")
+                print(f"{Back.YELLOW}{Fore.MAGENTA}{Style.BRIGHT} Congratulations! You guessed the word: {selected_word}")
                 break
         else:
             max_attempts -= 1
             hangman_stage += 1
-            print(Fore.RED+ f"Wrong guess! You have {max_attempts} attempts left.")
+            print(Back.RED+ f"Wrong guess! You have {max_attempts} attempts left.")
 
     if max_attempts == 0:
-        print(f"Sorry, you're out of attempts. The word was {selected_word}.")
+        print(f"Sorry, you're out of attempts. The word was {Back.MAGENTA}{Fore.CYAN}{Style.BRIGHT} {selected_word}.")
 
 """ Main loop for restarting the game """
 while True:
     play_hangman()
-    play_again = input(Back.WHITE+ "Do you want to play again? (yes/no): ").lower()
+    play_again = input(f"{Fore.CYAN} Do you want to play again? (yes/no): ").lower()
     if play_again != "yes":
         break
 
-print(Back.YELLOW+ "Thanks for playing Hangman!")
+print(f"{Back.YELLOW}Thanks for playing Hangman!")
