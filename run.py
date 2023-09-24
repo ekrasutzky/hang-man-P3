@@ -101,7 +101,7 @@ def play_hangman():
         if guess in selected_word:
             guesses += guess
             if display_word(selected_word, guesses) == selected_word:
-                print(f"{Back.YELLOW}{Fore.MAGENTA}{Style.BRIGHT} Congratulations! You guessed the word: {selected_word}")
+                print(f"{Back.WHITE}{Fore.MAGENTA}{Style.BRIGHT} Congratulations! You guessed the word: {selected_word}")
                 break
         else:
             max_attempts -= 1
