@@ -106,15 +106,15 @@ def play_hangman():
     max_attempts = 6
     hangman_stage = 0
 
-    print(Fore.MAGENTA + "Welcome to Hangman!")
+    print(f"{Fore.MAGENTA}{Style.BRIGHT}Welcome to Hangman!")
 
     while max_attempts > 0:
         print(hangman_stages[hangman_stage])
         print(display_word(selected_word, guesses))
-        guess = input(f"{Fore.MAGENTA}Guess a letter: ").lower()
+        guess = input(f"{Fore.MAGENTA}{Style.BRIGHT} Guess a letter: ").lower()
 
         if len(guess) != 1 or not guess.isalpha():
-            print(Fore.YELLOW + f"Please enter a single letter.")
+            print(f"{Fore.YELLOW }{Style.BRIGHT} Please enter a single letter.")
             continue
 
         if guess in selected_word:
@@ -125,7 +125,7 @@ def play_hangman():
         else:
             max_attempts -= 1
             hangman_stage += 1
-            print(Back.RED + f"Wrong guess! You have {max_attempts} attempts left.")
+            print(f"{Back.RED} {Style.BRIGHT} Wrong guess! You have {max_attempts} attempts left.")
 
     if max_attempts == 0:
         print(f"Sorry, you're out of attempts. The word was {Back.MAGENTA}{Fore.CYAN}{Style.BRIGHT} {selected_word}.")
@@ -138,8 +138,8 @@ Main loop for restarting the game
 
 while True:
     play_hangman()
-    play_again = input(f"{Fore.CYAN} Do you want to play again? (yes/no): ").lower()
+    play_again = input(f"{Fore.CYAN}{Style.BRIGHT} Do you want to play again? (yes/no): ").lower()
     if play_again != "yes":
         break
 
-print(f"{Fore.GREEN}Thanks for playing Hangman!")
+print(f"{Fore.GREEN}{Style.BRIGHT}Thanks for playing Hangman!")
