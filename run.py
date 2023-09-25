@@ -111,7 +111,7 @@ def play_hangman():
     while max_attempts > 0:
         print(hangman_stages[hangman_stage])
         print(display_word(selected_word, guesses))
-        guess = input({}"Guess a letter: ").lower()
+        guess = input(f"{Fore.MAGENTA}Guess a letter: ").lower()
 
         if len(guess) != 1 or not guess.isalpha():
             print(Fore.YELLOW + f"Please enter a single letter.")
