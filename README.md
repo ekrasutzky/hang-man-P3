@@ -1,6 +1,7 @@
 # HANGMAN 
 
  The Hangman Game is a classic word-guessing game implemented in Python. In this game, the player's objective is to guess a hidden word by suggesting letters one at a time. The game provides a visual representation of a hangman figure that evolves with each incorrect guess, adding an element of suspense and challenge.
+ 
  ## How to play
  - The game selects a word, and the player starts with a blank word with underscores representing each letter.
 
