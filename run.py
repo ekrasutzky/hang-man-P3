@@ -3,14 +3,13 @@ import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
+
+WORD_LIST = ["apple", "banana", "cherry", "date", "grape", "kiwi", "lemon"]
+
 """
 List of words for the game
 """
-word_list = ["apple", "banana", "cherry", "date", "grape", "kiwi", "lemon"]
 
-"""
-ASCII art for hangman
-"""
 hangman_stages = [
     """
      ------
@@ -71,17 +70,16 @@ hangman_stages = [
 ]
 
 """
-Function to select a random word from the list
+ASCII art for hangman
 """
 
 
 def select_word():
-    return random.choice(word_list)
+    return random.choice(WORD_LIST)
 
 
 """
-Function to display the current state of the
-word with underscores for hidden letters
+Function to select a random word from the list
 """
 
 
@@ -96,7 +94,8 @@ def display_word(word, guesses):
 
 
 """
-Function to play the Hangman game
+Function to display the current state of the
+word with underscores for hidden letters
 """
 
 
@@ -132,14 +131,19 @@ def play_hangman():
 
 
 """
-Main loop for restarting the game
+Function to play the Hangman game
 """
 
 
-while True:
-    play_hangman()
-    play_again = input(f"{Fore.CYAN}{Style.BRIGHT} Do you want to play again? (yes/no): ").lower()
-    if play_again != "yes":
-        break
+if __name__ == '__main__':
+    while True:
+        play_hangman()
+        play_again = input(f"{Fore.CYAN}{Style.BRIGHT} Do you want to play again? (yes/no): ").lower()
+        if play_again != "yes":
+            break
 
-print(f"{Fore.GREEN}{Style.BRIGHT}Thanks for playing Hangman!")
+    print(f"{Fore.GREEN}{Style.BRIGHT}Thanks for playing Hangman!")
+
+"""
+Main loop for restarting the game
+"""
