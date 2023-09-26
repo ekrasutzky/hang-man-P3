@@ -113,13 +113,13 @@ def play_hangman():
         guess = input(f"{Fore.MAGENTA}{Style.BRIGHT} Guess a letter: ").lower()
 
         if len(guess) != 1 or not guess.isalpha():
-            print(f"{Fore.YELLOW }{Style.BRIGHT} Please enter a single letter.")
+            print(f"{Fore.YELLOW} Please enter a single letter.")
             continue
 
         if guess in selected_word:
             guesses += guess
             if display_word(selected_word, guesses) == selected_word:
-                print(f"{Back.WHITE}{Fore.MAGENTA}{Style.BRIGHT} Congratulations! You guessed the word: {Back.MAGENTA}{Fore.CYAN}{Style.BRIGHT} {selected_word} ")
+                print(f"{Back.WHITE}{Fore.MAGENTA}Congratulations! You guessed the word: {Back.MAGENTA}{Fore.CYAN} {selected_word} ")
                 break
         else:
             max_attempts -= 1
@@ -127,7 +127,7 @@ def play_hangman():
             print(f"{Back.RED} {Style.BRIGHT} Wrong guess! You have {max_attempts} attempts left.")
 
     if max_attempts == 0:
-        print(f"Sorry, you're out of attempts. The word was {Back.MAGENTA}{Fore.CYAN}{Style.BRIGHT} {selected_word}.")
+        print(f"Sorry, you're out of attempts. The word was {Back.MAGENTA}{Fore.CYAN} {selected_word}.")
 
 
 """
