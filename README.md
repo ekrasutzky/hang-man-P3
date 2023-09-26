@@ -43,6 +43,28 @@
 
 - Colorama: I installed colorama in order to give the game color features to pop up the wrong answers, or any other prompt. 
 
+## Flow chart
+
+![Flow chart](./images/FlowChart.jpg)
+
+- Start Game: The game begins.
+- Select a Word: A random word is chosen from a predefined list.
+- Display Word: The word is displayed to the player with underscores for unguessed letters.
+- Player Guesses a Letter: The player enters a letter guess.
+- Is the Letter Correct?: The game checks if the guessed letter is correct.
+- If yes, the displayed word is updated with the correct letter.
+If no, the hangman figure evolves, and the game checks if the word is guessed.
+- Is Word Guessed?: The game checks if the entire word is guessed.
+- If yes, the player wins.
+- If no, the game continues.
+- Max Attempts Reached?: The game checks if the player has reached the maximum allowed incorrect attempts.
+- If yes, the player loses.
+- If no, the game continues.
+- Game Over: The game ends.
+- Restart Game: The player can choose to restart the game.
+- End Game: The game officially ends.
+
+
 ## Testing
 
 
