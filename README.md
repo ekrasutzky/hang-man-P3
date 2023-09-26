@@ -28,19 +28,34 @@
 - Colorama: I installed colorama in order to give the game color features to pop up the wrong answers, or any other prompt. 
 
 ## Testing
+
+
+I tested this project as it follows: 
+- Tested on GitPod terminal 
+- Ran a test on PEP8 lintern and check there were no errors to fix
+- Tested on the Code Institute's Heroku terminal
+
 ### Bugs
-### Remaining bugs
+No bugs found 
+
 ### Validator testing
+- Pep8
+   - No error was returned from PEP8online.com
 
 ## Deployment
 The project was deployed using Code Institute's mock terminal for Heroku
 
-- Steps for deployment: 
+- Steps for deployment on Heroku:
   - Fork or clone this repository
   - Create a new Heroku app 
   - Set the buildpacks to `python` and `node.js` (in that order)
   - Link the Heroku app to the repository
   - Click on Deploy
+
+- Steps for deployment on GitPod:
+    - The site was deployed to GitHub pages. The steps to deploy are as follows:
+    - In the GitHub repository, navigate to the Settings tabgit From the source section drop-down menu, select the Master Branch
+    - Once the master branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment. 
 
 # Credits
 - Code Institute for the deployment terminal.
