@@ -98,3 +98,4 @@ The project was deployed using Code Institute's mock terminal for Heroku
     [Here's the link to my deployed project on GitHub]( https://ekrasutzky.github.io/hang-man-P3/)
 # Credits
 - Code Institute for the deployment terminal.
+- LucidChart for the flowchart. 
