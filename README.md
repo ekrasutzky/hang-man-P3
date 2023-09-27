@@ -4,7 +4,7 @@
 
  ![first look at the game](./images/hm1.jpg)
 
- [Here's the link to the live version of my project](https://git.heroku.com/hang-man-erika.git)
+ [Here's the link to the live version of my project](https://hang-man-erika-bfd2418b41ff.herokuapp.com/)
 
  ## How to play
  - The game selects a word, and the player starts with a blank word with underscores representing each letter.
