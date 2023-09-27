@@ -119,15 +119,18 @@ def play_hangman():
         if guess in selected_word:
             guesses += guess
             if display_word(selected_word, guesses) == selected_word:
-                print(f"{Back.WHITE}{Fore.MAGENTA}Congratulations! You guessed the word: {Back.MAGENTA}{Fore.CYAN} {selected_word} ")
+                print(f"{Back.WHITE}{Fore.MAGENTA}Congratulations! You guessed"
+                      f"the word: {Back.MAGENTA}{Fore.CYAN} {selected_word} ")
                 break
         else:
             max_attempts -= 1
             hangman_stage += 1
-            print(f"{Back.RED} {Style.BRIGHT} Wrong guess! You have {max_attempts} attempts left.")
+            print(f"{Back.RED} Wrong guess! You have {max_attempts} attempts "
+                  f"left.")
 
     if max_attempts == 0:
-        print(f"Sorry, you're out of attempts. The word was {Back.MAGENTA}{Fore.CYAN} {selected_word}.")
+        print(f"Sorry, you're out of attempts. The word was "
+              f"{Back.MAGENTA}{Fore.CYAN} {selected_word}.")
 
 
 """
@@ -138,7 +141,9 @@ Function to play the Hangman game
 if __name__ == '__main__':
     while True:
         play_hangman()
-        play_again = input(f"{Fore.CYAN}{Style.BRIGHT} Do you want to play again? (yes/no): ").lower()
+        play_again = input(f"{Fore.CYAN}Do you want to play again? (yes/no): "
+                           ).lower()
+
         if play_again != "yes":
             break
 
